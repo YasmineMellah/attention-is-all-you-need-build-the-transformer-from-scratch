@@ -69,7 +69,7 @@ def scale_embeddings_by_sqrt_d_model(embeddings, d_model):
 import torch
 
 def compute_positional_div_term(d_model):
-    i = torch.arange(d_model // 2)
+    i = torch.arange(d_model // 2, dtype=torch.float32)
     return 10000**(-2*i / d_model)
 
 # Step 9 - build_position_index_column (not yet solved)
